@@ -1,0 +1,49 @@
+{% extends 'acout_main.html' %}
+{% block top_right %}
+    <div class="top_butoon">
+        <ul class="nav nav-pills">
+            <li role="presentation"  ><a href="/index.html" >主页</a></li>
+            <li role="presentation" class="active" ><a href="#" >个人资料</a></li>
+            <li role="presentation"><a href="/acount/logout.html">注销</a></li>
+        </ul>
+    </div>
+{% endblock %}
+{% block body %}
+    <div class="avata_change">
+        <img id="img" style="z-index: 0;" src="{{ file_path }}">
+    </div>
+    <div style="position: absolute;top: 36%;left: 40%;">
+        <input type="file" id="avata" >
+    </div>
+    <div class="table_mine">
+    <form action="/acount/mine/{{ nid }}.html" method="post" novalidate>
+        <p>账号:{{ obj.user }}</p>
+        <p>密码:{{ obj.pwd }}{{ obj.errors.pwd.0 }}</p>
+        <p> 邮箱:{{ obj.email }}{{ obj.errors.email.0 }}</p>
+        <p> 性别:{{ obj.sex }}{{ obj.errors.sex.0 }}</p>
+        <p> 年龄:{{ obj.age }}{{ obj.errors.age.0 }}</p>
+        <input type="submit" value="更改">
+    </form>
+    </div>
+
+{% endblock %}
+{% block js %}
+    <script>
+    $('#avata').change(function (){
+        $('#img').attr("src",URL.createObjectURL($(this)[0].files[0]))
+        var formdata = new FormData();
+        formdata.append('upload', $("#avata")[0].files[0])
+        $.ajax({
+            url:'/acount/mine/{{ nid }}.html',
+            type:'POST',
+            data:formdata,
+            processData: false,
+            contentType:false,
+            success:function (arg){
+                alert('上传成功')
+                location.reload()
+            }
+        })
+    })
+    </script>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'acout_main.html' %}
+{% block top_right %}
+    <div class="top_butoon">
+        <ul class="nav nav-pills">
+            <li role="presentation" ><a href="/acount/sigh_up.html">登陆</a></li>
+            <li role="presentation" class="active"><a href="#">注册</a></li>
+        </ul>
+    </div>
+{% endblock %}
+{% block body %}
+    <div style="position: absolute;top: 37%;left: 40%">
+        <form method="post" action="/acount/sigh_in.html" novalidate>
+            {% csrf_token %}
+            <p>{{ obj.user }}{{ obj.errors.user.0 }}</p>
+            <p>{{ obj.pwd }}{{ obj.errors.pwd.0 }}</p>
+            <p>{{ obj.email }}{{ obj.errors.email.0 }}</p>
+            <p>{{ obj.age }}{{ obj.errors.age.0 }}</p>
+            <p> {{ obj.sex }}{{ obj.errors.sex.0 }}
+            <input type="submit" value="注册"></p>
+        </form>
+
+    </div>
+{% endblock %}
+{% block js%}
+{% endblock %}

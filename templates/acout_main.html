@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <STYLE>
+    </STYLE>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% block css %}
+    {% endblock %}
+    <link rel="stylesheet" href="/static/acount_main.css">
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.css">
+</head>
+<body>
+<div class="top" >
+<div class="top_left">
+    <img src="/static/img/1.jpg" >
+</div>
+{% block top_right %}
+    {% endblock %}
+</div>
+<div class="main">
+    {% block body %}
+    {% endblock %}
+</div>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+{% block js %}
+{% endblock %}
+</body>
+</html>

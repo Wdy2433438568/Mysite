@@ -1,0 +1,30 @@
+{% extends 'acout_main.html' %}
+{% block top_right %}
+    <div class="top_butoon">
+        <ul class="nav nav-pills">
+            <li role="presentation"  ><a href="/index.html" >主页</a></li>
+            <li role="presentation" ><a href="/acount/mine/{{ u_id }}.html">个人资料</a></li>
+            <li role="presentation"><a href="/acount/logout.html">注销</a></li>
+            <li role="presentation"><img style="height: 50px;overflow: hidden;border-radius: 50%" src="{{ file_path }}"></li>
+        </ul>
+    </div>
+{% endblock %}
+{% block body %}
+    <div STYLE="width: 60%;position: absolute;top: 10%;left: 20%;">
+        <form method="post" action="http://127.0.0.1:8000/main/{{tid}}/edit_tea.html" novalidate >
+            <p>{{ obj.name }}{{ obj.errors.name.0 }}</p>
+            <p>{{ obj.age }}{{ obj.errors.age.0 }}</p>
+            <select name="select" multiple>
+            {% for i in cls_list %}
+                        {% if i.id in cls_id %}
+                            <option SELECTED value={{ i.id }} selected>{{ i.title }}</option>
+                            {% else %}
+                            <option  value={{ i.id }}>{{ i.title }}</option>
+                        {% endif %}
+{% endfor %}
+            </select>
+            <p>{{ obj.sex }}{{ obj.errors.sex.0 }}</p>
+            <input type="submit" value="提交" id="sub">
+        </form>
+    </div>
+{% endblock %}

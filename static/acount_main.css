@@ -1,0 +1,93 @@
+.top{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 110px;
+    background-color: #ff5900;
+}
+.top_butoon{
+    position: absolute;bottom: 0;right: 0px;
+}
+.top_left{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 110px;
+}
+.top_left img{
+    height: 110px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.main{
+    height: 860px;position: absolute;left: 0;right: 0;top: 105px;
+}
+
+.r_img{
+    height: 110px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.avata_change{
+    position: absolute;top: 12%;
+    left: 40%;
+    background-color: #dddddd;
+    width: 233px;
+    height: 206px;
+}
+
+.avata_change input{
+    height: 206px;
+    width: 233px;
+    opacity: 100%;
+}
+.avata_change img{
+    height: 206px;
+    width: 233px;
+    position: absolute;
+    top: 0;left: 0;
+}
+
+.table_mine{
+    width: 540px;
+    height: 600px;
+    position: absolute;
+    top: 40%;
+    left: 28%;
+}
+#view_img{
+    height: 206px;
+    width: 233px;
+    position: absolute;
+    top: 36px;
+    left: 683px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.hide{
+    display: none;
+}
+.shadow{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000000;
+    opacity: 0.4;
+    z-index: 1030;
+}
+.edit_modal{
+    z-index: 1040;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 400px;
+    height: 300px;
+    background-color: white;
+
+    margin-left: -200px;
+    margin-top: -150px;
+}

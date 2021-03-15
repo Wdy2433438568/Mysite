@@ -1,0 +1,36 @@
+{% extends 'acout_main.html' %}
+{% block top_right %}
+    <div class="top_butoon">
+        <ul class="nav nav-pills">
+            <li role="presentation" class="active" ><a href="/index.html" >主页</a></li>
+            <li role="presentation" ><a href="/acount/mine/{{ u_id }}.html">个人资料</a></li>
+            <li role="presentation"><a href="/acount/logout.html">注销</a></li>
+            <li role="presentation"><img style="height: 50px;overflow: hidden;border-radius: 50%" src="{{ file_path }}"></li>
+        </ul>
+    </div>
+{% endblock %}
+{% block body %}
+    <div style="width: 250px;height: 250px;position: absolute;top: 15%;left: 30%;background-color: #007bff;">
+    <h1><a class="text_middle" href="/main/stu.html">学生管理</a></h1>
+    </div>
+    <div style="width: 250px;height: 250px;position: absolute;top: 50%;left: 55%;background-color: #ff8400;">
+        <h1><a class="text_middle" href="/main/tea.html">教师管理</a></h1>
+    </div>
+    <div style="width: 250px;height: 250px;position: absolute;top: 15%;left: 55%;background-color: #00ffae;">
+        <h1><a class="text_middle" href="/admin">内部系统</a></h1>    </div>
+    <div style="width: 250px;height: 250px;position: absolute;top: 50%;left: 30%;background-color: #8000ff;">
+        <h1><a class="text_middle" href="/main/cls.html">班级管理</a></h1>
+    </div>
+{% endblock %}
+{% block css %}
+    <style>
+    .text_middle{
+        text-align: center;
+        font-family: fantasy;
+        position: absolute;
+        top: 39%;
+        left: 22%;
+        color: white;
+    }
+    </style>
+{% endblock %}

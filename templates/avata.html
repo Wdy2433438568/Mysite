@@ -1,0 +1,47 @@
+{% extends 'acout_main.html' %}
+{% block top_right %}
+    <div class="top_butoon">
+        <ul class="nav nav-pills">
+            <li role="presentation" ><a href="/acount/sigh_up.html">登陆</a></li>
+            <li role="presentation" class="active"><a href="#">注册</a></li>
+        </ul>
+    </div>
+{% endblock %}
+{% block body %}
+    <div style="width: 233px;height: 206px;position: absolute;top: 5%;left: 5%;">
+    <img id="view_img"  src="/static/img/2.jpg">
+    </div>
+<div style="position: absolute;top: 40%;left: 44%;">
+<p><input type="file" id="avata"></p>
+<p><input type="button" id="avata_sub" value="上传头像"></p>
+</div>
+{% endblock %}
+{% block js%}
+    <script src="/static/jquery.cookie.js"></script>
+    <script>
+    $('#avata').change(function (){
+        $('#view_img').attr("src",URL.createObjectURL($(this)[0].files[0]))
+    })
+
+
+
+
+
+    $("#avata_sub").click(function () {
+        var formdata = new FormData();
+        formdata.append('upload', $("#avata")[0].files[0])
+        $.ajax({
+            url: '/acount/avata.html',
+            type: 'POST',
+            data: formdata,
+            processData: false,
+            contentType:false,
+            success: function (arg) {
+                alert('注册成功')
+              location.href = '/index.html'
+                }
+            })
+        })
+
+    </script>
+{% endblock %}
